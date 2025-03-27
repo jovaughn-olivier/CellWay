@@ -6,7 +6,7 @@ html, body {
 	width: 100%;
 	overflow: hidden;
 	font-family: 'Poppins', sans-serif;
-	background: url('your-image.jpg') no-repeat center center fixed;
+	background: url('./pic.png') no-repeat center center fixed;
 	background-size: cover;
   }
   
@@ -36,7 +36,7 @@ html, body {
   }
   
   /* Search Button */
-  .search-button {
+	.search-button {
 	width: 50px;
 	height: 50px;
 	border-radius: 50%;
@@ -50,7 +50,7 @@ html, body {
 	transition: all 0.3s ease;
 	color: white;
 	font-size: 20px;
-  }
+  	}
   
   .search-button:hover {
 	background-color: #005f86;
@@ -117,5 +117,46 @@ html, body {
 	100% {
 	  box-shadow: 0 0 0 0 rgba(42, 147, 238, 0);
 	}
+}
+
+.menu {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+  }
+  
+  .menu-button {
+	background: white;
+	border: none;
+	border-radius: 50px;
+	padding: 10px 15px;
+	font-size: 20px;
+	cursor: pointer;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .menu-content {
+	display: none;
+	position: absolute;
+	background: white;
+	border-radius: 8px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+	margin-top: 10px;
+	width: 150px;
+  }
+  
+  .menu-content a {
+	display: block;
+	padding: 10px;
+	text-decoration: none;
+	color: black;
+  }
+  
+  .menu-content a:hover {
+	background: lightgray;
+  }
+  
+  .show {
+	display: block;
   }
   
