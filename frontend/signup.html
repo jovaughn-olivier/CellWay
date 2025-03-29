@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles.css">
   </head>
   <body class="login-page">
+
     <div class="menu">
       <button class="menu-button" onclick="toggleMenu()">☰</button>
       <div class="menu-content">
@@ -17,11 +18,12 @@
         <a href="references.html">References</a>
 	    </div>
     </div>  
-    
     <script>
-      function toggleMenu() {
-        document.querySelector(".menu-content").classList.toggle("show");
-      }
+      document.addEventListener("click", (e) => {
+        const menu = document.querySelector(".menu-content");
+        if (e.target.matches(".menu-button")) menu.classList.toggle("show");
+        else if (!menu.contains(e.target)) menu.classList.remove("show");
+      });
     </script>
     
     <h1>Sign Up</h1>

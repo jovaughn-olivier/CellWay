@@ -17,11 +17,13 @@
             <a href="references.html">References</a>
         </div>
 	  </div>	  
-    <script>
-        function toggleMenu() {
-            document.querySelector(".menu-content").classList.toggle("show");
-        }
-    </script>
+      <script>
+        document.addEventListener("click", (e) => {
+          const menu = document.querySelector(".menu-content");
+          if (e.target.matches(".menu-button")) menu.classList.toggle("show");
+          else if (!menu.contains(e.target)) menu.classList.remove("show");
+        });
+      </script>
 
     <div class="app-container">
         <div class="how-to-container">
