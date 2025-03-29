@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body class="login-page">
+    <div class="menu">
+      <button class="menu-button" onclick="toggleMenu()">☰</button>
+      <div class="menu-content">
+        <a href="homepage.html">Home</a>
+        <a href="how-to-use.html">How to Use</a>
+        <a href="login.html">Login</a>
+        <a href="signup.html">Sign Up</a>
+        <a href="references.html">References</a>
+	    </div>
+    </div>  
+    
+    <script>
+      function toggleMenu() {
+        document.querySelector(".menu-content").classList.toggle("show");
+      }
+    </script>
+    
+    <h1>Sign Up</h1>
+    <div class="form-container">
+      <form id="signupForm" action="#" method="post" onsubmit="return handleSignup(event)">
+        <div class="input-group">
+          <input type="text" id="newUsername" name="newUsername" placeholder="Email/Username">
+          <div class="error-message" id="newUsernameError"></div>
+        </div>
+
+        <div class="input-group">
+          <input type="password" id="newPassword" name="newPassword" placeholder="Password">
+          <div class="error-message" id="newPasswordError"></div>
+        </div>
+
+        <div class="button-container" style="display: flex; justify-content: center;">
+          <button type="submit" class="signup-button">Create Account</button>
+        </div>
+      </form>
+    </div>
+
+    <script>
+      function handleSignup(event) {
+        event.preventDefault();
+
+        const newUsername = document.getElementById("newUsername");
+        const newPassword = document.getElementById("newPassword");
+        
+        document.getElementById("newUsernameError").textContent = "";
+        document.getElementById("newPasswordError").textContent = "";
+
+        let isValid = true;
+        
+        if (newUsername.value.trim() === "") {
+          document.getElementById("newUsernameError").textContent = "Username is required.";
+          isValid = false;
+        }
+
+        if (newPassword.value.trim() === "") {
+          document.getElementById("newPasswordError").textContent = "Password is required.";
+          isValid = false;
+        }
+
+        if (isValid) {
+          alert("Account successfully created!");
+          window.location.href = "homepage.html";
+        }
+
+        return false;
+      }
+    </script>
+  </body>
+</html>

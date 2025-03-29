@@ -13,7 +13,8 @@
 		<div class="menu-content">
 		  <a href="homepage.html">Home</a>
 		  <a href="how-to-use.html">How to Use</a>
-		  <a href="login.html">Login / Sign Up</a>
+		  <a href="login.html">Login</a>
+      <a href="signup.html">Sign Up</a>
 		  <a href="references.html">References</a>
 		</div>
 	  </div>	  
@@ -72,7 +73,8 @@
         // If the form is valid, submit it (clear the password field)
         if (isValid) {
           password.value = ""; // Clear the password field
-          alert("Form submitted!"); // For now, show a success message
+          alert("Sign-in Successful!"); // For now, show a success message
+          window.location.href = "homepage.html";
         }
 
         return false; // Prevent actual form submission
