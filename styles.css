@@ -1,4 +1,4 @@
-/* Default background for all pages (change this as needed) */
+/* Default background for all pages */
 html, body {
     margin: 0;
     padding: 0;
@@ -9,13 +9,111 @@ html, body {
     background: white; /* Default background */
 }
 
-/* Background for the "How to Use" page only */
+/* ------------------ How-To-Use Page Styles ------------------ */
 body.how-to-use {
     background: url('./pic.png') no-repeat center center fixed;
     background-size: cover;
 }
 
-/* References Page Styling */
+.how-to-container {
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    max-width: 500px;
+    background: rgba(196, 225, 234, 0.97);
+    backdrop-filter: blur(8px);
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+/* ------------------ End of How-To-Use Page Styles ------------------ */
+
+
+/* ------------------ Login Page Styles ------------------ */
+/* Login Page Specific Styling */
+body.login-page {
+    background: #f8f9fa;
+}
+
+body.login-page h1 {
+    text-align: center;
+    color: #0078a8;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+body.login-page .form-container {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    background: #ffffff;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin-top: 60px;
+}
+
+body.login-page .input-group {
+    margin-bottom: 15px;
+}
+
+body.login-page .input-group input {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+body.login-page .input-group input:focus {
+    border-color: #0078a8;
+    outline: none;
+}
+
+body.login-page .error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+body.login-page .button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+body.login-page .button-container button {
+    width: 48%;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+body.login-page .login-button {
+    background-color: #0078a8;
+    color: white;
+}
+
+body.login-page .login-button:hover {
+    background-color: #005f86;
+}
+
+body.login-page .signup-button {
+    background-color: #28a745;
+    color: white;
+}
+
+body.login-page .signup-button:hover {
+    background-color: #218838;
+}
+/* ------------------ End of Login Page Styles ------------------ */
+
+/* ---------------- Reference Page Styles ------------------ */
 body.references {
     font-family: 'Arial', sans-serif;
     margin: 40px;
@@ -48,7 +146,9 @@ body.references li {
     line-height: 1.6;
 }
 
-/* Links on the References page should remain as normal links */
+
+/* ---------- beginning of code necessary for light blue links(matching theme) and functional menu dropdown */
+/* Coloring for the links (removes unlining associatiated with hyperlinks--until hover--and changes coloring) */
 body.references a {
     color: #0078a8;
     text-decoration: none;
@@ -78,116 +178,11 @@ body.references .menu-content a {
 body.references .menu-content a:hover {
     background: lightgray;
 }
+/* ---------- end of code necessary for light blue links(matching theme) and functional menu dropdown */
+/* ---------------- End of Reference Page Styles ------------------ */
 
-/* Search Container */
-.search-container {
-    position: absolute;
-    top: 15px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80%;
-    max-width: 500px;
-    background: rgba(196, 225, 234, 0.97);
-    backdrop-filter: blur(8px);
-    border-radius: 12px;
-    padding: 15px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
 
-/* Input Fields */
-.input-group input {
-    width: 100%;
-    padding: 14px;
-    border: none;
-    background: rgba(255, 255, 255, 0.9);
-    font-size: 16px;
-    border-radius: 8px;
-}
-
-/* Search Button */
-.search-button {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: #0078a8;
-    border: none;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    color: white;
-    font-size: 20px;
-}
-
-.search-button:hover {
-    background-color: #005f86;
-    transform: scale(1.1);
-}
-
-/* Markers */
-.origin-marker {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: #2A93EE;
-    border: 2px solid white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    animation: pulse 1.5s infinite;
-}
-
-.destination-marker {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: #EE2A2A;
-    border: 2px solid white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-}
-
-/* Button Container */
-.button-container {
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1001;
-}
-
-/* Locate Button */
-.locate-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    font-size: 16px;
-    background: white;
-    border: none;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
-    border-radius: 50%;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.locate-button:hover {
-    transform: scale(1.1);
-}
-
-/* Animations */
-@keyframes pulse {
-    0% {
-        box-shadow: 0 0 0 0 rgba(42, 147, 238, 0.7);
-    }
-    70% {
-        box-shadow: 0 0 0 15px rgba(42, 147, 238, 0);
-    }
-    100% {
-        box-shadow: 0 0 0 0 rgba(42, 147, 238, 0);
-    }
-}
-
+/* ------------------- Dropdown Menu Styles -------------------*/
 .menu {
     position: absolute;
     top: 10px;
@@ -228,3 +223,4 @@ body.references .menu-content a:hover {
 .show {
     display: block;
 }
+/* ------------------- End of Dropdown Menu Styles -------------------*/

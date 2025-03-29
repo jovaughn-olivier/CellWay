@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign In</title>
+	  <link rel="stylesheet" href="styles.css">
     
 	<!--
 	<style>
@@ -96,7 +97,22 @@
     </style>
 -->
   </head>
-  <body class="login">
+  <body class="login-page">
+	<div class="menu">
+		<button class="menu-button" onclick="toggleMenu()">☰</button>
+		<div class="menu-content">
+		  <a href="homepage.html">Home</a>
+		  <a href="how-to-use.html">How to Use</a>
+		  <a href="login.html">Login / Sign Up</a>
+		  <a href="references.html">References</a>
+		</div>
+	  </div>	  
+    <script>
+        function toggleMenu() {
+            document.querySelector(".menu-content").classList.toggle("show");
+        }
+    </script>
+	
     <h1>Sign In</h1>
     <div class="form-container">
       <form id="loginForm" action="#" method="post" onsubmit="return handleSubmit(event)">
