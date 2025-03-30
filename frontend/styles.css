@@ -261,8 +261,8 @@ body.references .menu-content a:hover {
 .account-menu-content a {
     display: block;
     padding: 10px;
-    text-decoration: none;
-    color: black;
+    text-decoration: none !important; 
+    color: black !important;
 }
 
 .account-menu-content a:hover {
