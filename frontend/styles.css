@@ -182,7 +182,7 @@ body.references .menu-content a:hover {
 /* ---------------- End of Reference Page Styles ------------------ */
 
 
-/* ------------------- Dropdown Menu Styles -------------------*/
+/* ------------------- Dropdown Menu Style -------------------*/
 .menu {
     position: absolute;
     top: 10px;
@@ -220,7 +220,55 @@ body.references .menu-content a:hover {
     background: lightgray;
 }
 
+/* ------------------- End of Original Menu Styles ------------------- */
+
+/* ------------------- Account Menu Styles ------------------- */
+.account-menu {
+    position: absolute;
+    right: 7px; /* Position the account button to the top right */
+}
+
+.account-menu-button {
+    padding: 0; 
+    width: 60px; /* Match the width to the profile image */
+    height: 60px;
+    border-radius: 50%; /* Keep the circular shape */
+    border: 0px; /* Remove border */
+    overflow: hidden; /* Prevent image overflow */
+    background: none; /* No background */
+}
+
+.profile-pic {
+    width: 100%; /* Make the image fill the button */
+    height: 100%;
+    object-fit: cover; /* Ensure the image is cropped correctly */
+}
+
+.account-menu-content {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin-top: 10px;
+    width: 150px;
+    z-index: 100;
+}
+
+.account-menu-content a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+.account-menu-content a:hover {
+    background: lightgray;
+}
+
 .show {
     display: block;
 }
-/* ------------------- End of Dropdown Menu Styles -------------------*/
+/* ------------------- End of Account Menu Styles ------------------- */

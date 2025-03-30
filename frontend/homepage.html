@@ -4,102 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homepage</title>
+    <link rel="stylesheet" href="styles.css">
   </head>
-  <style>
-    /* ------------------- Original Menu Styles ------------------- */
-    .menu {
-      position: absolute;
-      top: 10px;
-      left: 10px;
-    }
 
-    .menu-button {
-      background: white;
-      border: none;
-      border-radius: 50px;
-      padding: 10px 15px;
-      font-size: 20px;
-      cursor: pointer;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    }
-
-    .menu-content {
-      display: none;
-      position: absolute;
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-      margin-top: 10px;
-      width: 150px;
-    }
-
-    .menu-content a {
-      display: block;
-      padding: 10px;
-      text-decoration: none;
-      color: black;
-    }
-
-    .menu-content a:hover {
-      background: lightgray;
-    }
-
-    /* ------------------- End of Original Menu Styles ------------------- */
-
-    /* ------------------- Account Menu Styles ------------------- */
-    .account-menu {
-      position: absolute;
-      top: 10px;
-      right: 10px; /* Position the account button to the top right */
-    }
-
-    .account-menu-button {
-      padding: 0; 
-      width: 50px; /* Match the width to the profile image */
-      height: 50px;
-      border-radius: 50%; /* Keep the circular shape */
-      border: none; /* Remove border */
-      overflow: hidden; /* Prevent image overflow */
-      background: none; /* No background */
-    }
-
-    .profile-pic {
-      width: 100%; /* Make the image fill the button */
-      height: 100%;
-      object-fit: cover; /* Ensure the image is cropped correctly */
-    }
-
-    .account-menu-content {
-      display: none;
-      position: absolute;
-      top: 40px;
-      right: 0;
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-      margin-top: 10px;
-      width: 150px;
-      z-index: 100;
-    }
-
-    .account-menu-content a {
-      display: block;
-      padding: 10px;
-      text-decoration: none;
-      color: black;
-    }
-
-    .account-menu-content a:hover {
-      background: lightgray;
-    }
-
-    .show {
-      display: block;
-    }
-    /* ------------------- End of Account Menu Styles ------------------- */
-  </style>
   <body>
-
     <!-- Regular menu -->
     <div class="menu">
       <button class="menu-button" onclick="toggleMenu('menu-content')">☰</button>
@@ -124,26 +32,36 @@
   
     <script>
       function isUserSignedIn() { return false; } // Replace with real authentication check
-  
-      function toggleMenu(menuId) {
+    
+      function toggleMenu(menuClass) {
         event.stopPropagation();
+        
+        const menu = document.querySelector(`.${menuClass}`);
+        const isAlreadyOpen = menu.classList.contains("show");
+    
+        // Close all menus first
         document.querySelectorAll('.menu-content, .account-menu-content')
-          .forEach(menu => menu.classList.remove('show'));
-        document.querySelector(`.${menuId}`).classList.toggle('show');
-  
-        if (menuId === 'account-menu-content') {
+          .forEach(m => m.classList.remove('show'));
+    
+        // If the clicked menu was not open, open it
+        if (!isAlreadyOpen) {
+          menu.classList.add("show");
+        }
+    
+        // Handle sign-in options only if it's the account menu
+        if (menuClass === "account-menu-content") {
           const isSignedIn = isUserSignedIn();
-          document.getElementById('login-signup').style.display = isSignedIn ? 'none' : 'block';
-          document.getElementById('reset-password').style.display = isSignedIn ? 'block' : 'none';
-          document.getElementById('logout').style.display = isSignedIn ? 'block' : 'none';
+          document.getElementById("login-signup").style.display = isSignedIn ? "none" : "block";
+          document.getElementById("reset-password").style.display = isSignedIn ? "block" : "none";
+          document.getElementById("logout").style.display = isSignedIn ? "block" : "none";
         }
       }
-  
-      document.addEventListener("click", () => 
+    
+      // Close menus when clicking outside
+      document.addEventListener("click", () => {
         document.querySelectorAll('.menu-content, .account-menu-content')
-          .forEach(menu => menu.classList.remove('show'))
-      );
+          .forEach(menu => menu.classList.remove('show'));
+      });
     </script>
-  
   </body>
 </html>
