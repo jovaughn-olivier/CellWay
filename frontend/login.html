@@ -5,26 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign In</title>
 	  <link rel="stylesheet" href="styles.css">
-    
+    <script src="menuLoader.js" defer></script>
+ 
   </head>
   <body class="login-page">
-	<div class="menu">
-		<button class="menu-button" onclick="toggleMenu()">☰</button>
-		<div class="menu-content">
-		  <a href="homepage.html">Home</a>
-		  <a href="how-to-use.html">How to Use</a>
-		  <a href="login.html">Login</a>
-      <a href="signup.html">Sign Up</a>
-		  <a href="references.html">References</a>
-		</div>
-	  </div>	  
-    <script>
-      document.addEventListener("click", (e) => {
-        const menu = document.querySelector(".menu-content");
-        if (e.target.matches(".menu-button")) menu.classList.toggle("show");
-        else if (!menu.contains(e.target)) menu.classList.remove("show");
-      });
-    </script>
+    <div id="menu-container"></div>
 	
     <h1>Sign In</h1>
     <div class="form-container">

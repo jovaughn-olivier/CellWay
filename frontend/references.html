@@ -5,39 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>References</title>
     <link rel="stylesheet" href="styles.css">
-    
+    <script src="menuLoader.js" defer></script>
+
 </head>
 <body class="references">
-    <div class="menu">
-        <button class="menu-button" onclick="toggleMenu()">☰</button>
-        <div class="menu-content">
-          <a href="homepage.html">Home</a>
-          <a href="how-to-use.html">How to Use</a>
-          <a href="login.html">Login</a>
-          <a href="signup.html">Sign Up</a>
-          <a href="references.html">References</a>
-      </div>
-      </div>	  
-      <script>
-        document.addEventListener("click", (e) => {
-          const menu = document.querySelector(".menu-content");
-          if (e.target.matches(".menu-button")) menu.classList.toggle("show");
-          else if (!menu.contains(e.target)) menu.classList.remove("show");
-        });
-      </script>
-    <h1>References</h1>
-    <div class="reference-container">
-        <ul>
-            <li>Jaldu, A., Olivier, J., Patel, A. (2025). <i>CellWay Software Requirements Specification.</i> Wentworth Institute of Technology.</li>
-            <li>OpenCelliD - largest open database of cell towers & geolocation - by Unwired Labs. (n.d.). <a href="https://www.opencellid.org/#zoom=7&lat=40.43&lon=-77.7" target="_blank">OpenCelliD</a>.</li>
-            <li>Place class. (n.d.). Google for Developers. <a href="https://developers.google.com/maps/documentation/javascript/place" target="_blank">Google Maps API</a>.</li>
-            <li>Googlemaps. (n.d.). GitHub - googlemaps/google-maps-services-js: Node.js client library for Google Maps API Web Services. <a href="https://github.com/googlemaps/google-maps-services-js" target="_blank">GitHub Repository</a>.</li>
-            <li>Google Cloud Platform. (n.d.). <a href="https://console.cloud.google.com/google/maps-hosted/build?authuser=1&inv=1&invt=AboEDA" target="_blank">Google Cloud Console</a>.</li>
-            <li>Quick Start Guide - Leaflet - a JavaScript library for interactive maps. (n.d.). <a href="https://leafletjs.com/examples/quick-start/" target="_blank">Leaflet Documentation</a>.</li>
-            <li>MongoDB Pymongo Documentation. (n.d.). <a href="https://www.mongodb.com/docs/languages/python/pymongo-driver/current/" target="_blank">MongoDB Docs</a>.</li>
-            <li>Reactpy. (2023). <a href="https://reactpy.dev/docs/index.html" target="_blank">ReactPy Documentation</a>.</li>
-            <li>Welcome to Flask. (n.d.). <a href="https://flask.palletsprojects.com/en/stable/" target="_blank">Flask Documentation</a>.</li>
-        </ul>
-    </div>
+  <div id="menu-container"></div>
+
+  <h1>References</h1>
+  <div class="reference-container">
+      <ul>
+          <li>Jaldu, A., Olivier, J., Patel, A. (2025). <i>CellWay Software Requirements Specification.</i> Wentworth Institute of Technology.</li>
+          <li>OpenCelliD - largest open database of cell towers & geolocation - by Unwired Labs. (n.d.). <a href="https://www.opencellid.org/#zoom=7&lat=40.43&lon=-77.7" target="_blank">OpenCelliD</a>.</li>
+          <li>Place class. (n.d.). Google for Developers. <a href="https://developers.google.com/maps/documentation/javascript/place" target="_blank">Google Maps API</a>.</li>
+          <li>Googlemaps. (n.d.). GitHub - googlemaps/google-maps-services-js: Node.js client library for Google Maps API Web Services. <a href="https://github.com/googlemaps/google-maps-services-js" target="_blank">GitHub Repository</a>.</li>
+          <li>Google Cloud Platform. (n.d.). <a href="https://console.cloud.google.com/google/maps-hosted/build?authuser=1&inv=1&invt=AboEDA" target="_blank">Google Cloud Console</a>.</li>
+          <li>Quick Start Guide - Leaflet - a JavaScript library for interactive maps. (n.d.). <a href="https://leafletjs.com/examples/quick-start/" target="_blank">Leaflet Documentation</a>.</li>
+          <li>MongoDB Pymongo Documentation. (n.d.). <a href="https://www.mongodb.com/docs/languages/python/pymongo-driver/current/" target="_blank">MongoDB Docs</a>.</li>
+          <li>Reactpy. (2023). <a href="https://reactpy.dev/docs/index.html" target="_blank">ReactPy Documentation</a>.</li>
+          <li>Welcome to Flask. (n.d.). <a href="https://flask.palletsprojects.com/en/stable/" target="_blank">Flask Documentation</a>.</li>
+      </ul>
+  </div>
 </body>
 </html>

@@ -1,67 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
-    <link rel="stylesheet" href="styles.css">
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Homepage</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="menuLoader.js" defer></script>
+</head>
+<body>
 
-  <body>
-    <!-- Regular menu -->
-    <div class="menu">
-      <button class="menu-button" onclick="toggleMenu('menu-content')">☰</button>
-      <div class="menu-content">
-        <a href="homepage.html">Home</a>
-        <a href="how-to-use.html">How to Use</a>
-        <a href="references.html">References</a>
-      </div>
-    </div>
-  
-    <!-- Account menu -->
-    <div class="account-menu">
-      <button class="account-menu-button" onclick="toggleMenu('account-menu-content')">
-        <img src="../assets/avatar-icon.png" alt="Account" class="profile-pic">
-      </button>
-      <div class="account-menu-content">
-        <a href="login.html" id="login-signup">Sign In / Sign Up</a>
-        <a href="reset-password.html" id="reset-password">Reset Password</a>
-        <a href="logout.html" id="logout">Sign Out</a>
-      </div>
-    </div>
-  
-    <script>
-      function isUserSignedIn() { return false; } // Replace with real authentication check
-    
-      function toggleMenu(menuClass) {
-        event.stopPropagation();
-        
-        const menu = document.querySelector(`.${menuClass}`);
-        const isAlreadyOpen = menu.classList.contains("show");
-    
-        // Close all menus first
-        document.querySelectorAll('.menu-content, .account-menu-content')
-          .forEach(m => m.classList.remove('show'));
-    
-        // If the clicked menu was not open, open it
-        if (!isAlreadyOpen) {
-          menu.classList.add("show");
-        }
-    
-        // Handle sign-in options only if it's the account menu
-        if (menuClass === "account-menu-content") {
-          const isSignedIn = isUserSignedIn();
-          document.getElementById("login-signup").style.display = isSignedIn ? "none" : "block";
-          document.getElementById("reset-password").style.display = isSignedIn ? "block" : "none";
-          document.getElementById("logout").style.display = isSignedIn ? "block" : "none";
-        }
-      }
-    
-      // Close menus when clicking outside
-      document.addEventListener("click", () => {
-        document.querySelectorAll('.menu-content, .account-menu-content')
-          .forEach(menu => menu.classList.remove('show'));
-      });
-    </script>
-  </body>
+  <!-- Menus will be loaded here -->
+  <div id="menu-container"></div>
+
+</body>
 </html>
