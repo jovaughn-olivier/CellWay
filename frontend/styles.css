@@ -11,7 +11,7 @@ html, body {
 
 /* ------------------ How-To-Use Page Styles ------------------ */
 body.how-to-use {
-    background: url('./pic.png') no-repeat center center fixed;
+    background: url('../assets/pic.png') no-repeat center center fixed;
     background-size: cover;
 }
 
