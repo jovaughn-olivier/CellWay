@@ -158,7 +158,7 @@ body.references a:hover {
     text-decoration: underline;
 }
 
-/* Ensure menu button and menu links are not treated as hyperlinks */
+/* ---------- Ensure menu button and menu links are not treated as hyperlinks */
 body.references .menu-button {
     pointer-events: all; /* Allow clicking */
     color: inherit; /* Ensures the text doesn't become blue or act like a hyperlink */
@@ -178,9 +178,8 @@ body.references .menu-content a {
 body.references .menu-content a:hover {
     background: lightgray;
 }
-/* ---------- end of code necessary for light blue links(matching theme) and functional menu dropdown */
+/* ---------- End of code necessary for light blue links(matching theme) and functional menu dropdown */
 /* ---------------- End of Reference Page Styles ------------------ */
-
 
 /* ------------------- Dropdown Menu Style -------------------*/
 .menu {
@@ -224,8 +223,10 @@ body.references .menu-content a:hover {
 
 /* ------------------- Account Menu Styles ------------------- */
 .account-menu {
-    position: absolute;
-    right: 7px; /* Position the account button to the top right */
+    position: absolute !important;
+    top: 0px !important;
+    right: 7px !important;
+    z-index: 1000 !important; /* Ensure it appears above other elements */
 }
 
 .account-menu-button {
