@@ -218,7 +218,6 @@ body.references .menu-content a:hover {
 .menu-content a:hover {
     background: lightgray;
 }
-
 /* ------------------- End of Original Menu Styles ------------------- */
 
 /* ------------------- Account Menu Styles ------------------- */
@@ -273,3 +272,74 @@ body.references .menu-content a:hover {
     display: block;
 }
 /* ------------------- End of Account Menu Styles ------------------- */
+
+/* ------------------ Password Reset Page Styles ------------------ */
+body.reset-page {
+    background: #f8f9fa;
+}
+
+body.reset-page h1 {
+    text-align: center;
+    color: #0078a8;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+body.reset-page .form-container {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    background: #ffffff;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin-top: 60px;
+}
+
+
+body.reset-page .error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+body.reset-page .button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+body.reset-page .button-container button {
+    width: 65%;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #edf0f1;
+    color: black;
+    transition: background-color 0.3s ease;
+}
+
+body.reset-page .button-container button:hover {
+    background-color: #d3d6d8;
+}
+/* ------------------ End of Password Reset Page Styles ------------------ */
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: height 0.3s ease; /* Smooth transition when expanding */
+    height: auto;
+}
+
+#resetPasswordContainer {
+    display: none;
+    text-align: center;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px; /* Adds space between buttons */
+}

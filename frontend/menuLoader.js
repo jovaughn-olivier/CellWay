@@ -10,7 +10,9 @@ document.addEventListener("DOMContentLoaded", function () {
   });
   
   function attachMenuScripts() {
-	function isUserSignedIn() { return false; } // Replace with real authentication check
+	function isUserSignedIn() { 
+		return true; // Replace with real authentication check
+	} 
   
 	window.toggleMenu = function (menuClass) {
 	  event.stopPropagation();

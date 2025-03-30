@@ -4,34 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign In</title>
-	  <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css">
     <script src="menuLoader.js" defer></script>
- 
+
   </head>
   <body class="login-page">
     <div id="menu-container"></div>
-	
+    
     <h1>Sign In</h1>
     <div class="form-container">
       <form id="loginForm" action="#" method="post" onsubmit="return handleSubmit(event)">
         <div class="input-group">
-          <input type="text" id="username" name="username" placeholder="Email/Username" required>
+          <input type="text" id="username" name="username" placeholder="Email/Username">
           <div class="error-message" id="usernameError"></div>
         </div>
 
         <div class="input-group">
-          <input type="password" id="password" name="password" placeholder="Password" required>
+          <input type="password" id="password" name="password" placeholder="Password">
           <div class="error-message" id="passwordError"></div>
         </div>
 
         <div class="button-container">
           <button type="submit" class="login-button">Login</button>
-          <button type="submit" class="signup-button">Sign Up</button>
+          <button type="button" class="signup-button" onclick="handleSignup(event)">Sign Up</button>
         </div>
       </form>
+
+      <!-- Link to reset password, hidden initially -->
+      <div id="resetPasswordContainer">
+        <p><a href="#" onclick="resetPassword()">Click this link to reset your password</a></p>
+      </div>
     </div>
 
     <script>
+      let failedAttempts = 0;
+
       // Handle form submission
       function handleSubmit(event) {
         event.preventDefault(); // Prevent the form from submitting normally
@@ -57,14 +64,72 @@
           isValid = false;
         }
 
+        // Check password validity with a placeholder function
+        if (isValid && !isPasswordValid(password.value)) {
+          document.getElementById("passwordError").textContent = "Incorrect password.";
+          failedAttempts++;
+
+          // Check if failed attempts reached 4
+          if (failedAttempts >= 4) {
+            document.getElementById("resetPasswordContainer").style.display = "block"; // Show reset password link
+          }
+
+          isValid = false;
+        }
+
         // If the form is valid, submit it (clear the password field)
         if (isValid) {
           password.value = ""; // Clear the password field
           alert("Sign-in Successful!"); // For now, show a success message
-          window.location.href = "homepage.html";
+          window.location.href = "homepage.html"; // Redirect to the homepage
         }
 
         return false; // Prevent actual form submission
+      }
+
+      // Handle sign-up (when the Sign Up button is clicked)
+      function handleSignup(event) {
+        event.preventDefault(); // Prevent the form from submitting normally
+
+        // Get form inputs for Sign Up
+        const username = document.getElementById("username");
+        const password = document.getElementById("password");
+
+        // Clear error messages
+        document.getElementById("usernameError").textContent = "";
+        document.getElementById("passwordError").textContent = "";
+
+        // Simulate the validation and account creation
+        let isValid = true;
+
+        if (username.value.trim() === "") {
+          document.getElementById("usernameError").textContent = "Username is required.";
+          isValid = false;
+        }
+
+        if (password.value.trim() === "") {
+          document.getElementById("passwordError").textContent = "Password is required.";
+          isValid = false;
+        }
+
+        if (isValid) {
+          alert("Account successfully created!"); // Simulate the account creation success
+          window.location.href = "homepage.html"; // Redirect to the homepage
+        }
+
+        return false; // Prevent actual form submission
+      }
+
+      // Placeholder function to determine if the password is valid (e.g., check against a stored hash)
+      function isPasswordValid(password) {
+        // For the purpose of this example, assume the password is "password123"
+        return password === "password123";
+      }
+
+      // Reset password function (simulate the action)
+      function resetPassword() {
+        alert("Redirecting to password reset page...");
+        window.location.href = "resetPassword.html"; // Redirect to password reset page
       }
 
       // Allow pressing Enter in either field to submit the form
