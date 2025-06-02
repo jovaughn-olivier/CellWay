@@ -1,0 +1,61 @@
+/* ==================================================
+   MAP CONTAINER - Base Styles and Layout
+   ================================================== */
+
+   .map-container {
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0; /* Base layer */
+    background-color: #f0f0f0; /* Fallback background */
+  }
+  
+  
+  /* ==================================================
+     MAP CONTAINER - Interaction State
+     ================================================== */
+  
+  .map-container.map-interactions-disabled {
+    cursor: default; /* Indicate non-interactive state */
+  }
+  
+  
+  /* ==================================================
+     MAP CONTAINER - Leaflet UI Layering
+     ================================================== */
+  
+  .map-container .leaflet-control-container {
+     z-index: 500; /* Ensure controls are above tiles but below custom panels */
+  }
+  
+  .map-container .leaflet-popup-pane {
+      z-index: 600; /* Ensure popups are above controls */
+  }
+
+  /* ==================================================
+     MAP CONTAINER - Attribution Control Styling
+     ================================================== */
+  
+  /* Custom styling for attribution control to ensure consistency */
+  .map-container .leaflet-control-attribution,
+  html body .leaflet-container .leaflet-control-attribution {
+    background: rgba(255, 255, 255, 0.8) !important;
+    color: #333 !important;
+    font-size: 11px !important;
+    line-height: 1.4 !important;
+    padding: 0 5px !important;
+    margin: 0 !important;
+  }
+  
+  .map-container .leaflet-control-attribution a,
+  html body .leaflet-container .leaflet-control-attribution a {
+    color: #0078A8 !important;
+    text-decoration: none !important;
+  }
+  
+  .map-container .leaflet-control-attribution a:hover,
+  html body .leaflet-container .leaflet-control-attribution a:hover {
+    text-decoration: underline !important;
+  }

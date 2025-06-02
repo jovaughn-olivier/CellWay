@@ -1,0 +1,292 @@
+/* ==================================================
+   SEARCH TOGGLE BUTTON - Top Center Button
+   ================================================== */
+
+   .search-button-container {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000; /* Above map, below modals */
+  }
+  
+  .search-toggle-button {
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    background: white;
+    border: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 20px;
+    padding: 0;
+    color: #333;
+  }
+  
+  .search-toggle-button .icon-img { /* Icon within toggle button */
+    width: 20px;
+    height: 20px;
+    display: block;
+  }
+  
+  .search-toggle-button:hover { /* Toggle button hover */
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  
+  /* ==================================================
+     SEARCH PANEL CONTAINER - Main Panel Box
+     ================================================== */
+  
+  .search-panel-container {
+    position: absolute;
+    top: 65px; /* Position below the toggle button */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 420px;
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+    overflow: visible; /* Allow suggestions dropdown to overflow */
+    animation: slideDownSearch 0.3s ease;
+    z-index: 1000; /* Same level as toggle button */
+  }
+  
+  @keyframes slideDownSearch { /* Slide-down animation for panel */
+    0% { transform: translateX(-50%) translateY(-20px); opacity: 0; }
+    100% { transform: translateX(-50%) translateY(0); opacity: 1; }
+  }
+  
+  
+  /* ==================================================
+     SEARCH PANEL CONTENT - Inner Padding and Header
+     ================================================== */
+  
+  .search-panel-content {
+    padding: 20px;
+    position: relative;
+  }
+  
+  .search-panel-header {
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 18px;
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 16px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .search-panel-header span {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #2d3748;
+  }
+  
+  /* Info Button */
+  .info-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+    padding: 0;
+  }
+  
+  .info-button:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+  
+  .info-button .icon-img.small {
+    width: 20px;
+    height: 20px;
+    color: #4a5568;
+  }
+  
+  
+  /* ==================================================
+     SEARCH INPUTS - Wrapper, Group, and Input Styling
+     ================================================== */
+  
+  .search-input-wrapper {
+    margin-bottom: 15px;
+  }
+  
+  .input-group { /* Container for input + clear button */
+    background-color: #f8f9fa;
+    border-radius: 12px;
+    padding: 5px 12px;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+    position: relative;
+    border: 1px solid #eaeaea;
+  }
+  
+  .input-group:focus-within { /* Focus state for the entire group */
+    background-color: #e8f0fe;
+    box-shadow: 0 0 0 2px rgba(42, 147, 238, 0.5);
+    border-color: #2A93EE;
+  }
+  
+  .input-container { /* Flex container for the input itself */
+    flex: 1;
+    position: relative;
+  }
+  
+  .input-group input { /* Actual input field */
+    width: 100%;
+    padding: 14px 40px 14px 0; /* Right padding for clear button */
+    border: none;
+    background: transparent;
+    color: #333;
+    font-size: 15px;
+    outline: none;
+  }
+  
+  
+  /* ==================================================
+     CLEAR INPUT BUTTON - Button to Clear Input Field
+     ================================================== */
+  
+  .clear-input {
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #999;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    z-index: 2;
+    transition: all 0.2s ease;
+  }
+  
+  .clear-input:hover { /* Clear button hover */
+    color: #333;
+    background-color: rgba(0,0,0,0.05);
+  }
+  
+  
+  /* ==================================================
+     SUGGESTIONS DROPDOWN - Autocomplete Suggestions List
+     ================================================== */
+  
+  .suggestions-dropdown {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    position: absolute;
+    top: 100%;
+    left: -12px;
+    right: -12px;
+    z-index: 1005; /* Above panel content */
+    max-height: 200px;
+    overflow-y: auto;
+    margin-top: 5px;
+    border: 1px solid #eaeaea;
+  }
+  
+  .suggestion-item { /* Individual suggestion item */
+    padding: 14px 16px;
+    border-bottom: 1px solid #f1f1f1;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    color: #333;
+  }
+  
+  .suggestion-item:last-child { /* Last item no border */
+    border-bottom: none;
+  }
+  
+  .suggestion-item:hover { /* Suggestion hover state */
+    background-color: #f0f7ff;
+  }
+  
+  
+  /* ==================================================
+     CELL TOWER TOGGLE - Section and Button Styling
+     ================================================== */
+  
+  .cell-tower-toggle-section {
+    margin-top: 20px;
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .cell-tower-toggle-section .toggle-button { /* Toggle button style */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    background-color: #f8f9fa;
+    border: 1px solid #e0e0e0;
+    border-radius: 28px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #333;
+    font-size: 14px;
+    font-weight: 500;
+    width: 100%;
+    max-width: 250px;
+  }
+  
+  .cell-tower-toggle-section .toggle-button:hover { /* Toggle hover */
+    background-color: #e0e0e0;
+    transform: translateY(-2px);
+  }
+  
+  .cell-tower-toggle-section .toggle-button.active { /* Toggle active state */
+    background-color: #2A93EE;
+    color: white;
+    border-color: #2A93EE;
+    box-shadow: 0 4px 12px rgba(42, 147, 238, 0.3);
+  }
+  
+  .cell-tower-toggle-section .toggle-icon { /* Icon within toggle button */
+    font-size: 16px;
+    margin-right: 8px;
+  }
+  
+  .tower-count-display { /* Tower count text below toggle */
+    font-size: 13px;
+    color: #666;
+    margin-top: -2px;
+  }
+  
+  
+  /* ==================================================
+     LOADING INDICATOR - Search Panel Loading State
+     ================================================== */
+  
+  .search-loading-indicator {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 14px;
+    color: #888;
+    font-style: italic;
+  }

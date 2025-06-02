@@ -1,0 +1,105 @@
+/* ==================================================
+   MAP CONTROLS CONTAINER - Positioning and Layout
+   ================================================== */
+
+   .map-controls-container {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000; /* Above map, potentially below modals */
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  
+  /* ==================================================
+     MAP CONTROL BUTTON - General Styles
+     ================================================== */
+  
+  .map-control-button {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: white;
+    border: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 22px; /* Default icon size */
+    padding: 0;
+    color: #333;
+  }
+  
+  .map-control-button:hover { /* Hover state */
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  
+  /* ==================================================
+     MAP CONTROL BUTTON - States (Active, Disabled)
+     ================================================== */
+  
+  .map-control-button.active { /* Active state (e.g., toggle on) */
+    background-color: #2A93EE;
+    color: white;
+    box-shadow: 0 4px 12px rgba(42, 147, 238, 0.3);
+  }
+  
+  .map-control-button.disabled { /* Disabled state */
+    background-color: #e0e0e0;
+    color: #999;
+    cursor: not-allowed;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .map-control-button.disabled:hover { /* Disabled hover state */
+    transform: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  
+  /* ==================================================
+     LOCATE BUTTON - Specific Styles and Animation
+     ================================================== */
+  
+  .locate-button {
+    /* Inherits base map-control-button styles */
+  }
+  
+  .locate-button.locating { /* Style when actively locating */
+    animation: pulseLocate 1.5s infinite;
+  }
+  
+  @keyframes pulseLocate { /* Animation for locating state */
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+  }
+  
+  
+  /* ==================================================
+     ROUTE TYPE BUTTON - Specific Styles
+     ================================================== */
+  
+  .route-type-button {
+    /* Inherits base map-control-button styles */
+  }
+  
+  .route-type-button:hover:not(.disabled) { /* Hover state (if not disabled) */
+    background-color: #e8f4ff;
+    transform: scale(1.05);
+  }
+  
+  
+  /* ==================================================
+     TOWER TOGGLE BUTTON - Specific Styles
+     ================================================== */
+  
+  .tower-toggle-button {
+    /* Inherits base map-control-button styles */
+  }
